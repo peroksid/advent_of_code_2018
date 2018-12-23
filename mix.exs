@@ -1,11 +1,11 @@
-defmodule D1t2.MixProject do
+defmodule Advent.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :d1t2,
+      app: :advent,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       escript: escript_config()
@@ -27,9 +27,9 @@ defmodule D1t2.MixProject do
     ]
   end
 
-  defp escript_config do
+  defp escript_config() do
     [
-      main_module: D1t2.CLI
+      main_module: Advent.CLI
     ]
   end
 end

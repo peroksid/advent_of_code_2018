@@ -1,6 +1,6 @@
-defmodule D3t1 do
+defmodule Advent do
   @moduledoc """
-  Documentation for D3t1.
+  Documentation for Advent.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule D3t1 do
 
   ## Examples
 
-      iex> D3t1.hello
+      iex> Advent.hello
       :world
 
   """
