@@ -23,4 +23,6 @@ erl_crash.dump
 advent-*.tar
 
 *~
+
 advent
+!advent/
