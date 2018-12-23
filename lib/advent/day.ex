@@ -1,6 +1,7 @@
 defmodule Advent.Day do
   defmacro __using__(_opts) do
     quote do
+      require Logger
       @behaviour Advent.Day.Behaviour
 
       def main(path) do
