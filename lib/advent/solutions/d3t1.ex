@@ -7,6 +7,6 @@ defmodule Advent.Solutions.D3t1 do
   end
   
   def solve(_) do
-    IO.puts("hoh")
+    "hoh"
   end
 end

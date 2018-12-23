@@ -4,7 +4,12 @@ defmodule Advent.Day do
       @behaviour Advent.Day.Behaviour
 
       def main(path) do
-	IO.puts(path)
+	path
+	|> File.read!()
+	|> String.split()
+	|> Enum.map(&parse_line/1)
+	|> (&solve/1).()
+	|> IO.puts()
       end
     end
   end

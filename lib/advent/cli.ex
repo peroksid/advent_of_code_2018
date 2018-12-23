@@ -8,7 +8,6 @@ defmodule Advent.CLI do
       switches: [verbose: :boolean]
     )
     switches = get_switches(parsed_switches)
-    Logger.error(inspect(switches))
     configure_logger(switches)
     process(args)
   end
