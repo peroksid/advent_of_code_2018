@@ -1,6 +1,6 @@
 defmodule Advent.Day.Behaviour do
-  @callback parse_line(String.t) :: term
-  @callback solve(List) :: String.t
+  @callback parse_line(String.t()) :: term
+  @callback solve(List) :: String.t()
 
   def main(path) do
     IO.puts(path)

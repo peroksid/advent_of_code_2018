@@ -2,11 +2,14 @@ defmodule Advent.CLI do
   require Logger
 
   @solution_method :main
-  
+
   def main(argv) do
-    {parsed_switches, args, _} = OptionParser.parse(argv,
-      switches: [verbose: :boolean]
-    )
+    {parsed_switches, args, _} =
+      OptionParser.parse(
+        argv,
+        switches: [verbose: :boolean]
+      )
+
     switches = get_switches(parsed_switches)
     configure_logger(switches)
     process(args)
@@ -14,6 +17,7 @@ defmodule Advent.CLI do
 
   defp get_switches(switches) do
     default_switches = [verbose: false]
+
     Keyword.merge(
       default_switches,
       switches
@@ -21,11 +25,13 @@ defmodule Advent.CLI do
   end
 
   defp configure_logger(switches) do
-    level = if Keyword.get(switches, :verbose) do
-      :debug
-    else
-      :error
-    end
+    level =
+      if Keyword.get(switches, :verbose) do
+        :debug
+      else
+        :error
+      end
+
     Logger.configure(level: level)
   end
 
@@ -33,7 +39,8 @@ defmodule Advent.CLI do
     apply(
       normalized_module(module_tag),
       @solution_method,
-      [get_input_file_path(input)])
+      [get_input_file_path(input)]
+    )
   end
 
   defp process(_) do
@@ -42,26 +49,28 @@ defmodule Advent.CLI do
 
   defp normalized_module(module_tag) do
     module_alias = String.capitalize(module_tag)
-    module = Module.concat(["Advent",
-			    "Solutions",
-			    module_alias])
+    module = Module.concat(["Advent", "Solutions", module_alias])
     Logger.debug(module)
+
     case Code.ensure_loaded(module) do
       {:module, module} -> module
       {:error, reason} -> raise "Can't load module #{module} for #{reason}"
     end
+
     unless function_exported?(module, @solution_method, 1) do
       raise "Public method #{module}:#{@solution_method}/1 does not exist"
     end
+
     module
   end
 
   defp get_input_file_path(provided_path) do
     path = Path.expand(provided_path)
+
     unless File.exists?(path) do
       raise "File does not exist: #{path}"
     end
+
     path
   end
 end
-    

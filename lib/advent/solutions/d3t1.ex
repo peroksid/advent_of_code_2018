@@ -5,7 +5,7 @@ defmodule Advent.Solutions.D3t1 do
     {value, ""} = Integer.parse(line)
     value
   end
-  
+
   def solve(_) do
     "hoh"
   end
