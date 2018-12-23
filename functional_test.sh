@@ -13,9 +13,11 @@
 }
 
 @test "d2t2" {
-    result="$(./advent d2t2 inputs/2/input)"
-    expected="mxhwoglxgeauywfkztndcvjqr"
-    [ "$result" = "$expected" ]
+    [ "$(./advent d2t2 inputs/2/input)" = "mxhwoglxgeauywfkztndcvjqr" ]
+}
+
+@test "d3t1" {
+    [ "$(./advent d3t1 inputs/3/input.txt)" = "111326" ]
 }
 
 # @test "test" {

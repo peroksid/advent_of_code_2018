@@ -7,7 +7,7 @@ defmodule Advent.Day do
       def main(path) do
         path
         |> File.read!()
-        |> String.split()
+        |> String.split("\n", trim: true)
         |> Enum.map(&parse_line/1)
         |> (&solve/1).()
         |> IO.puts()
