@@ -1,21 +1,13 @@
-# Advent
+# Advent 2018
 
-**TODO: Add description**
+## Build
 
-## Installation
+1) Install Elixir
+2) mix escript.build
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `advent` to your list of dependencies in `mix.exs`:
+## Test
 
-```elixir
-def deps do
-  [
-    {:advent, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/advent](https://hexdocs.pm/advent).
+1) Install BATS: brew install bats-core
+2) build
+3) ./functional_test.sh
 
